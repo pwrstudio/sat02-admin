@@ -8,13 +8,29 @@ export default {
             title: 'Title',
             type: 'string',
             description: 'Name of the participant',
-            validation: (Rule: any) => Rule.required().max(100)
+            validation: (Rule: any) => Rule.required()
         },
         {
             name: 'description',
             title: 'Description',
+            type: 'contentEditor',
+            description: 'Description of the participant',
+        },
+        {
+            name: 'pullQuote',
+            title: 'Pull quote',
             type: 'text',
-            description: 'A short description of the participant',
+            description: 'Short quote',
+            validation: (Rule: any) => Rule.max(400)
+        },
+        {
+            name: 'featuredImage',
+            title: 'Featured image',
+            type: 'image',
+            description: 'Featured image of the project',
+            options: {
+                hotspot: true,
+            },
         },
         {
             name: 'images',
@@ -71,8 +87,14 @@ export default {
     preview: {
         select: {
             title: 'title',
-            subtitle: 'description',
-            media: 'images[0]'
+            media: 'featuredImage'
+        },
+        prepare(selection: any) {
+            const { title, media } = selection;
+            return {
+                title,
+                media: media.asset
+            };
         }
     }
 }

@@ -25,16 +25,7 @@ export default {
         {
             name: 'description',
             title: 'Description',
-            type: 'text',
-            description: 'A short description of the event',
-            validation: (Rule: any) => Rule.required().min(10).max(200)
-        },
-        {
-            name: 'venue',
-            title: 'Venue',
-            type: 'string',
-            description: 'Venue where the event will be held',
-            validation: (Rule: any) => Rule.required().max(100)
+            type: 'contentEditor',
         },
         {
             name: 'dateTime',
@@ -44,11 +35,32 @@ export default {
             validation: (Rule: any) => Rule.required()
         },
         {
+            name: 'venues',
+            title: 'Venues',
+            type: 'array',
+            of: [
+                {
+                    type: 'reference',
+                    to: [{ type: 'venue' }]
+                }
+            ],
+            description: 'Project venues'
+        },
+        {
             name: 'medium',
             title: 'Medium',
             type: 'string',
             description: 'Medium of the event',
-            validation: (Rule: any) => Rule.required().max(100)
+        },
+        {
+            name: 'featuredImage',
+            title: 'Featured image',
+            type: 'image',
+            description: 'Featured image of the project',
+            options: {
+                hotspot: true,
+            },
+            validation: (Rule: any) => Rule.required()
         },
         {
             name: 'media',
@@ -115,8 +127,14 @@ export default {
     preview: {
         select: {
             title: 'title',
-            subtitle: 'description',
-            media: 'media[0]'
+            media: 'featuredImage'
+        },
+        prepare(selection: any) {
+            const { title, media } = selection;
+            return {
+                title,
+                media: media.asset
+            };
         }
     }
 }

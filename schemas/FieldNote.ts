@@ -25,20 +25,24 @@ export default {
         {
             name: 'content',
             title: 'Content',
-            type: 'text',
+            type: 'contentEditor',
             description: 'Content of the field note',
-            validation: (Rule: any) => Rule.required().min(10).max(2000)
         },
         {
-            name: 'images',
-            title: 'Images',
-            type: 'array',
-            of: [{ type: 'image' }],
-            description: 'Images related to the field note',
+            name: 'pullQuote',
+            title: 'Pull quote',
+            type: 'text',
+            description: 'Short quote',
+            validation: (Rule: any) => Rule.max(400)
+        },
+        {
+            name: 'featuredImage',
+            title: 'Featured image',
+            type: 'image',
+            description: 'Featured image of the project',
             options: {
                 hotspot: true,
             },
-            validation: (Rule: any) => Rule.min(1).max(10)
         },
         {
             name: 'links',
@@ -67,7 +71,6 @@ export default {
                     description: 'Links related to the field note'
                 }
             ],
-            validation: (Rule: any) => Rule.min(1).max(5)
         },
         {
             name: 'slug',

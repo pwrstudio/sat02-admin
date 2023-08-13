@@ -8,14 +8,14 @@ export default {
             title: 'Title',
             type: 'string',
             description: 'Name of the venue',
-            validation: (Rule: any) => Rule.required().max(100)
+            validation: (Rule: any) => Rule.required()
         },
         {
             name: 'address',
             title: 'Address',
             type: 'text',
             description: 'Address of the venue',
-            validation: (Rule: any) => Rule.required().min(10).max(200)
+            validation: (Rule: any) => Rule.required()
         },
         {
             name: 'location',
@@ -26,9 +26,17 @@ export default {
         {
             name: 'description',
             title: 'Description',
-            type: 'text',
+            type: 'contentEditor',
             description: 'A short description of the venue',
-            validation: (Rule: any) => Rule.required().min(10).max(200)
+        },
+        {
+            name: 'featuredImage',
+            title: 'Featured image',
+            type: 'image',
+            description: 'Featured image of the project',
+            options: {
+                hotspot: true,
+            },
         },
         {
             name: 'images',

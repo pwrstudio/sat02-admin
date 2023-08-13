@@ -8,13 +8,20 @@ export default {
             title: 'Title',
             type: 'string',
             description: 'Title of the project',
-            validation: (Rule: any) => Rule.required().max(100)
+            validation: (Rule: any) => Rule.required()
         },
         {
             name: 'description',
             title: 'Description',
+            type: 'contentEditor',
+            description: 'Project text'
+        },
+        {
+            name: 'pullQuote',
+            title: 'Pull quote',
             type: 'text',
-            description: 'A short description of the project'
+            description: 'Short quote',
+            validation: (Rule: any) => Rule.max(400)
         },
         {
             name: 'participants',
@@ -51,6 +58,15 @@ export default {
             title: 'Medium',
             type: 'string',
             description: 'Medium of the project',
+        },
+        {
+            name: 'featuredImage',
+            title: 'Featured image',
+            type: 'image',
+            description: 'Featured image of the project',
+            options: {
+                hotspot: true,
+            },
         },
         {
             name: 'processMedia',
@@ -176,21 +192,14 @@ export default {
     preview: {
         select: {
             title: 'title',
-            subtitle: 'description',
-            media: 'processMedia'
+            media: 'featuredImage'
         },
         prepare(selection: any) {
-            const { title, subtitle, media } = selection;
-
-            // Assuming that the first media is always an image
-            const firstImageAsset = media && media[0].asset;
-
+            const { title, media } = selection;
             return {
                 title,
-                subtitle,
-                media: firstImageAsset
+                media: media.asset
             };
         }
     }
-
 }
