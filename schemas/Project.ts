@@ -1,27 +1,67 @@
+import {
+    MdFolder
+} from "react-icons/md"
+
 export default {
     name: 'project',
     title: 'Project',
+    icon: MdFolder,
     type: 'document',
+    groups: [
+        {
+            name: 'en',
+            title: 'English',
+        },
+        {
+            name: 'ar',
+            title: 'Arabic',
+        },
+    ],
     fields: [
         {
             name: 'title',
-            title: 'Title',
+            title: 'Title (english)',
             type: 'string',
-            description: 'Title of the project',
-            validation: (Rule: any) => Rule.required()
+            description: 'Title in English',
+            validation: (Rule: any) => Rule.required(),
+            group: "en",
+        },
+        {
+            name: 'title_ar',
+            title: 'Title (arabic)',
+            type: 'string',
+            description: 'Title in Arabic',
+            group: "ar",
         },
         {
             name: 'description',
-            title: 'Description',
+            title: 'Description (english)',
             type: 'contentEditor',
-            description: 'Project text'
+            description: 'Project text',
+            group: "en",
+        },
+        {
+            name: 'description_ar',
+            title: 'Description (arabic)',
+            type: 'contentEditor',
+            description: 'Project text',
+            group: "ar",
         },
         {
             name: 'pullQuote',
-            title: 'Pull quote',
+            title: 'Pull quote (english)',
             type: 'text',
             description: 'Short quote',
-            validation: (Rule: any) => Rule.max(400)
+            validation: (Rule: any) => Rule.max(400),
+            group: "en",
+        },
+        {
+            name: 'pullQuote_ar',
+            title: 'Pull quote (arabic)',
+            type: 'text',
+            description: 'Short quote in arabic',
+            validation: (Rule: any) => Rule.max(400),
+            group: "ar",
         },
         {
             name: 'participants',
@@ -67,6 +107,18 @@ export default {
             options: {
                 hotspot: true,
             },
+            fields: [
+                {
+                    name: 'caption',
+                    type: 'string',
+                    title: 'Caption (english)',
+                },
+                {
+                    name: 'caption_ar',
+                    type: 'string',
+                    title: 'Caption (arabic)',
+                },
+            ],
         },
         {
             name: 'processMedia',
@@ -79,7 +131,19 @@ export default {
                     name: 'image',
                     options: {
                         hotspot: true,
-                    }
+                    },
+                    fields: [
+                        {
+                            name: 'caption',
+                            type: 'string',
+                            title: 'Caption (english)',
+                        },
+                        {
+                            name: 'caption_ar',
+                            type: 'string',
+                            title: 'Caption (arabic)',
+                        },
+                    ]
                 },
                 {
                     type: 'file',
@@ -87,10 +151,15 @@ export default {
                     name: 'video',
                     fields: [
                         {
-                            name: 'description',
+                            name: 'caption',
                             type: 'string',
-                            title: 'Description'
-                        }
+                            title: 'Caption (english)',
+                        },
+                        {
+                            name: 'caption_ar',
+                            type: 'string',
+                            title: 'Caption (arabic)',
+                        },
                     ],
                     options: {
                         accept: 'video/*'
@@ -103,11 +172,15 @@ export default {
                     name: 'audio',
                     fields: [
                         {
-                            name: 'description',
+                            name: 'caption',
                             type: 'string',
-                            title: 'Description',
-                            validation: (Rule: any) => Rule.required().max(100)
-                        }
+                            title: 'Caption (english)',
+                        },
+                        {
+                            name: 'caption_ar',
+                            type: 'string',
+                            title: 'Caption (arabic)',
+                        },
                     ],
                     options: {
                         accept: 'audio/*'
@@ -128,7 +201,19 @@ export default {
                     name: 'image',
                     options: {
                         hotspot: true,
-                    }
+                    },
+                    fields: [
+                        {
+                            name: 'caption',
+                            type: 'string',
+                            title: 'Caption (english)',
+                        },
+                        {
+                            name: 'caption_ar',
+                            type: 'string',
+                            title: 'Caption (arabic)',
+                        },
+                    ],
                 },
                 {
                     type: 'file',
@@ -136,10 +221,15 @@ export default {
                     name: 'video',
                     fields: [
                         {
-                            name: 'description',
+                            name: 'caption',
                             type: 'string',
-                            title: 'Description'
-                        }
+                            title: 'Caption (english)',
+                        },
+                        {
+                            name: 'caption_ar',
+                            type: 'string',
+                            title: 'Caption (arabic)',
+                        },
                     ],
                     options: {
                         accept: 'video/*'
@@ -152,11 +242,15 @@ export default {
                     name: 'audio',
                     fields: [
                         {
-                            name: 'description',
+                            name: 'caption',
                             type: 'string',
-                            title: 'Description',
-                            validation: (Rule: any) => Rule.required().max(100)
-                        }
+                            title: 'Caption (english)',
+                        },
+                        {
+                            name: 'caption_ar',
+                            type: 'string',
+                            title: 'Caption (arabic)',
+                        },
                     ],
                     options: {
                         accept: 'audio/*'

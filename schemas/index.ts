@@ -4,5 +4,6 @@ import Event from "./Event"
 import Venue from "./Venue"
 import FieldNote from "./FieldNote"
 import ContentEditor from "./ContentEditor"
+import Page from "./Page"
 
-export const schemaTypes = [Participant, Project, Event, Venue, FieldNote, ContentEditor]
+export const schemaTypes = [Page, Participant, Project, Event, Venue, FieldNote, ContentEditor]

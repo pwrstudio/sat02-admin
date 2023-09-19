@@ -1,14 +1,37 @@
+import {
+    MdEvent,
+} from "react-icons/md"
+
 export default {
     name: 'event',
     title: 'Event',
+    icon: MdEvent,
     type: 'document',
+    groups: [
+        {
+            name: 'en',
+            title: 'English',
+        },
+        {
+            name: 'ar',
+            title: 'Arabic',
+        },
+    ],
     fields: [
         {
             name: 'title',
-            title: 'Title',
+            title: 'Title (english)',
             type: 'string',
-            description: 'Title of the event',
-            validation: (Rule: any) => Rule.required().max(100)
+            description: 'Title of the event i english',
+            validation: (Rule: any) => Rule.required().max(100),
+            group: "en",
+        },
+        {
+            name: 'title_ar',
+            title: 'Title (arabic)',
+            type: 'string',
+            description: 'Title of the event in arabic',
+            group: "ar",
         },
         {
             name: 'participants',
@@ -24,8 +47,15 @@ export default {
         },
         {
             name: 'description',
-            title: 'Description',
+            title: 'Description (english)',
             type: 'contentEditor',
+            group: "en",
+        },
+        {
+            name: 'description_ar',
+            title: 'Description (arabic)',
+            type: 'contentEditor',
+            group: "ar",
         },
         {
             name: 'dateTime',
@@ -44,13 +74,7 @@ export default {
                     to: [{ type: 'venue' }]
                 }
             ],
-            description: 'Project venues'
-        },
-        {
-            name: 'medium',
-            title: 'Medium',
-            type: 'string',
-            description: 'Medium of the event',
+            description: 'Event venues'
         },
         {
             name: 'featuredImage',
@@ -60,6 +84,18 @@ export default {
             options: {
                 hotspot: true,
             },
+            fields: [
+                {
+                    name: 'caption',
+                    type: 'string',
+                    title: 'Caption (english)',
+                },
+                {
+                    name: 'caption_ar',
+                    type: 'string',
+                    title: 'Caption (arabic)',
+                },
+            ],
             validation: (Rule: any) => Rule.required()
         },
         {
@@ -73,7 +109,19 @@ export default {
                     name: 'image',
                     options: {
                         hotspot: true,
-                    }
+                    },
+                    fields: [
+                        {
+                            name: 'caption',
+                            type: 'string',
+                            title: 'Caption (english)',
+                        },
+                        {
+                            name: 'caption_ar',
+                            type: 'string',
+                            title: 'Caption (arabic)',
+                        },
+                    ],
                 },
                 {
                     type: 'file',
@@ -81,11 +129,15 @@ export default {
                     name: 'video',
                     fields: [
                         {
-                            name: 'description',
+                            name: 'caption',
                             type: 'string',
-                            title: 'Description',
-                            validation: (Rule: any) => Rule.required().max(100)
-                        }
+                            title: 'Caption (english)',
+                        },
+                        {
+                            name: 'caption_ar',
+                            type: 'string',
+                            title: 'Caption (arabic)',
+                        },
                     ],
                     options: {
                         accept: 'video/*'
@@ -98,11 +150,15 @@ export default {
                     name: 'audio',
                     fields: [
                         {
-                            name: 'description',
+                            name: 'caption',
                             type: 'string',
-                            title: 'Description',
-                            validation: (Rule: any) => Rule.required().max(100)
-                        }
+                            title: 'Caption (english)',
+                        },
+                        {
+                            name: 'caption_ar',
+                            type: 'string',
+                            title: 'Caption (arabic)',
+                        },
                     ],
                     options: {
                         accept: 'audio/*'
@@ -122,7 +178,6 @@ export default {
             },
             validation: (Rule: any) => Rule.required()
         }
-
     ],
     preview: {
         select: {

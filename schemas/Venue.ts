@@ -1,21 +1,52 @@
+import {
+    MdPinDrop
+} from "react-icons/md"
+
 export default {
     name: 'venue',
     title: 'Venue',
+    icon: MdPinDrop,
     type: 'document',
+    groups: [
+        {
+            name: 'en',
+            title: 'English',
+        },
+        {
+            name: 'ar',
+            title: 'Arabic',
+        },
+    ],
     fields: [
         {
             name: 'title',
-            title: 'Title',
+            title: 'Title (english)',
             type: 'string',
             description: 'Name of the venue',
-            validation: (Rule: any) => Rule.required()
+            validation: (Rule: any) => Rule.required(),
+            group: "en",
+        },
+        {
+            name: 'title_ar',
+            title: 'Title (arabic)',
+            type: 'string',
+            description: 'Title in Arabic',
+            group: "ar",
         },
         {
             name: 'address',
             title: 'Address',
             type: 'text',
             description: 'Address of the venue',
-            validation: (Rule: any) => Rule.required()
+            validation: (Rule: any) => Rule.required(),
+            group: "en",
+        },
+        {
+            name: 'address_ar',
+            title: 'Address (arabic)',
+            type: 'text',
+            description: 'Address of the venue',
+            group: "ar",
         },
         {
             name: 'location',
@@ -25,9 +56,17 @@ export default {
         },
         {
             name: 'description',
-            title: 'Description',
+            title: 'Description (english)',
             type: 'contentEditor',
             description: 'A short description of the venue',
+            group: "en",
+        },
+        {
+            name: 'description_ar',
+            title: 'Description (arabic)',
+            type: 'contentEditor',
+            description: 'A short description of the venue',
+            group: "ar",
         },
         {
             name: 'featuredImage',
@@ -37,16 +76,41 @@ export default {
             options: {
                 hotspot: true,
             },
+            fields: [
+                {
+                    name: 'caption',
+                    type: 'string',
+                    title: 'Caption (english)',
+                },
+                {
+                    name: 'caption_ar',
+                    type: 'string',
+                    title: 'Caption (arabic)',
+                },
+            ],
         },
         {
             name: 'images',
             title: 'Images',
             type: 'array',
-            of: [{ type: 'image' }],
+            of: [{
+                type: 'image', options: {
+                    hotspot: true,
+                },
+                fields: [
+                    {
+                        name: 'caption',
+                        type: 'string',
+                        title: 'Caption (english)',
+                    },
+                    {
+                        name: 'caption_ar',
+                        type: 'string',
+                        title: 'Caption (arabic)',
+                    },
+                ],
+            }],
             description: 'Images related to the venue',
-            options: {
-                hotspot: true,
-            },
             validation: (Rule: any) => Rule.min(1).max(10)
         },
         {
@@ -60,8 +124,13 @@ export default {
                         {
                             name: 'title',
                             type: 'string',
-                            title: 'Title',
+                            title: 'Title (english)',
                             validation: (Rule: any) => Rule.required().max(100)
+                        },
+                        {
+                            name: 'title_ar',
+                            type: 'string',
+                            title: 'Title (arabic)',
                         },
                         {
                             name: 'url',
