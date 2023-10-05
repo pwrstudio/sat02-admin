@@ -8,7 +8,8 @@ import {
     MdNewspaper,
     MdMail,
     MdPeople,
-    MdHome
+    MdHome,
+    MdShop
 } from "react-icons/md"
 
 export default (S) =>
@@ -28,7 +29,7 @@ export default (S) =>
                                 .child(
                                     S.editor()
                                         .id("about")
-                                        .title("about")
+                                        .title("About")
                                         .schemaType("about")
                                         .documentId("about")
                                 ),
@@ -38,7 +39,7 @@ export default (S) =>
                                 .child(
                                     S.editor()
                                         .id("team")
-                                        .title("team")
+                                        .title("Team")
                                         .schemaType("team")
                                         .documentId("team")
                                 ),
@@ -48,9 +49,19 @@ export default (S) =>
                                 .child(
                                     S.editor()
                                         .id("contact")
-                                        .title("contact")
+                                        .title("Contact")
                                         .schemaType("contact")
                                         .documentId("contact")
+                                ),
+                            S.listItem()
+                                .title("Design store")
+                                .icon(MdShop)
+                                .child(
+                                    S.editor()
+                                        .id("design-store")
+                                        .title("Design store")
+                                        .schemaType("designStore")
+                                        .documentId("design-store")
                                 ),
                             S.listItem()
                                 .title("Press")
@@ -64,6 +75,7 @@ export default (S) =>
                                 ),
                         ])
                 ),
+            S.divider(),
             S.listItem()
                 .title("Participants")
                 .icon(MdPerson)
@@ -114,6 +126,7 @@ export default (S) =>
                         .filter("_type == $type")
                         .params({ type: "venue" })
                 ),
+            S.divider(),
             S.listItem()
                 .title("Press releases")
                 .icon(MdBook)
@@ -133,5 +146,16 @@ export default (S) =>
                         .showIcons(true)
                         .filter("_type == $type")
                         .params({ type: "pressCoverage" })
+                ),
+            S.divider(),
+            S.listItem()
+                .title("Store items")
+                .icon(MdShop)
+                .child(
+                    S.documentList()
+                        .title('Store items')
+                        .showIcons(true)
+                        .filter("_type == $type")
+                        .params({ type: "storeItem" })
                 ),
         ])
