@@ -17,6 +17,10 @@ export default {
             title: 'Arabic',
         },
     ],
+    initialValue: {
+        category: "discussion",
+        period: "openingEvent"
+    },
     fields: [
         {
             name: 'title',
@@ -32,6 +36,18 @@ export default {
             type: 'string',
             description: 'Title of the event in arabic',
             group: "ar",
+        },
+        {
+            title: 'Category',
+            name: 'category',
+            type: 'string',
+            options: {
+                list: [
+                    { title: 'Discussion', value: 'discussion' },
+                    { title: 'Performance', value: 'performance' }
+                ],
+                layout: 'radio',
+            }
         },
         {
             name: 'participants',
@@ -63,6 +79,18 @@ export default {
             type: 'datetime',
             description: 'Date and time of the event',
             validation: (Rule: any) => Rule.required()
+        },
+        {
+            title: 'Period',
+            name: 'period',
+            type: 'string',
+            options: {
+                list: [
+                    { title: 'Opening event', value: 'openingEvent' },
+                    { title: 'Closing event', value: 'closingEvent' }
+                ],
+                layout: 'radio'
+            }
         },
         {
             name: 'venues',
