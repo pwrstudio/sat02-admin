@@ -273,6 +273,18 @@ export default {
             description: 'List of events related to the project'
         },
         {
+            name: 'credits',
+            title: 'Credits (english)',
+            type: 'contentEditor',
+            group: "en",
+        },
+        {
+            name: 'credits_ar',
+            title: 'Credits (arabic)',
+            type: 'contentEditor',
+            group: "ar",
+        },
+        {
             name: 'slug',
             title: 'Slug',
             type: 'slug',
