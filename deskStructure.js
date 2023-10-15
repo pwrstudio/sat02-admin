@@ -9,7 +9,8 @@ import {
     MdMail,
     MdPeople,
     MdHome,
-    MdShop
+    MdShop,
+    MdCalendarMonth
 } from "react-icons/md"
 
 export default (S) =>
@@ -72,6 +73,26 @@ export default (S) =>
                                         .title("Press")
                                         .schemaType("press")
                                         .documentId("press")
+                                ),
+                            S.listItem()
+                                .title("Calendar")
+                                .icon(MdCalendarMonth)
+                                .child(
+                                    S.editor()
+                                        .id("calendar")
+                                        .title("Calendar")
+                                        .schemaType("calendar")
+                                        .documentId("calendar")
+                                ),
+                            S.listItem()
+                                .title("Venues")
+                                .icon(MdPinDrop)
+                                .child(
+                                    S.editor()
+                                        .id("venues")
+                                        .title("Venues")
+                                        .schemaType("page")
+                                        .documentId("venues")
                                 ),
                         ])
                 ),
