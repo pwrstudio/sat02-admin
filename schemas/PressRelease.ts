@@ -17,6 +17,9 @@ export default {
             title: 'Arabic',
         },
     ],
+    initialValue: {
+        targetType: "pdf"
+    },
     fields: [
         {
             name: 'title',
@@ -60,30 +63,30 @@ export default {
             type: 'date'
         },
         {
-            name: 'publication',
-            title: 'Publication',
+            name: 'targetType',
+            title: 'Type',
             type: 'string',
+            options: {
+                list: [
+                    { title: 'PDF', value: 'pdf' },
+                    { title: 'External link', value: 'link' },
+                ],
+                layout: 'radio',
+            },
+            validation: (Rule: any) => Rule.required()
         },
         {
             name: 'link',
             title: 'Link',
-            type: 'url'
+            type: 'url',
         },
         {
-            name: 'pdf_en',
-            title: 'PDF (english)',
+            name: 'pdf',
+            title: 'PDF ',
             type: 'file',
             options: {
                 accept: '.pdf'
-            }
-        },
-        {
-            name: 'pdf_ar',
-            title: 'PDF (arabic)',
-            type: 'file',
-            options: {
-                accept: '.pdf'
-            }
+            },
         },
         {
             name: 'content',
