@@ -3,8 +3,8 @@ import {
 } from "react-icons/md"
 
 export default {
-    name: 'about',
-    title: 'About',
+    name: 'theme',
+    title: 'Theme',
     icon: MdHome,
     type: 'document',
     groups: [

@@ -8,11 +8,11 @@ import Page from "./Page"
 import Press from "./Press"
 import PressRelease from "./PressRelease"
 import PressCoverage from "./PressCoverage"
-import About from "./About"
+import Theme from "./Theme"
 import Team from "./Team"
 import Contact from "./Contact"
 import DesignStore from "./DesignStore"
 import StoreItem from "./StoreItem"
 import Calendar from "./Calendar"
 
-export const schemaTypes = [About, Team, Contact, DesignStore, StoreItem, Page, Participant, Project, Event, Venue, FieldNote, Press, PressRelease, PressCoverage, Calendar, ContentEditor]
+export const schemaTypes = [Theme, Team, Contact, DesignStore, StoreItem, Page, Participant, Project, Event, Venue, FieldNote, Press, PressRelease, PressCoverage, Calendar, ContentEditor]

@@ -1,3 +1,5 @@
+import { largeDecorator } from "./decorators/LargeDecorator"
+
 export default {
     title: 'Content editor',
     type: 'object',
@@ -13,6 +15,11 @@ export default {
                     type: 'block',
                     styles: [
                         { title: 'Normal', value: 'normal' },
+                        {
+                            title: 'Large',
+                            value: 'large',
+                            component: largeDecorator
+                        },
                         { title: 'Quote', value: 'blockquote' },
                         // { title: 'H1', value: 'h1' },
                         // { title: 'H2', value: 'h2' },

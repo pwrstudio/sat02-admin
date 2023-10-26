@@ -161,9 +161,7 @@ export default {
     ],
     preview: {
         select: {
-            title: 'title',
-            subtitle: 'description',
-            media: 'images[0]'
+            title: 'title', media: 'images[0]'
         }
     }
 }

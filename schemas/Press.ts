@@ -48,6 +48,11 @@ export default {
             group: "ar"
         },
         {
+            name: 'pressKitLink',
+            title: 'Press Kit Link',
+            type: 'url',
+        },
+        {
             name: 'slug',
             title: 'Slug',
             type: 'slug',

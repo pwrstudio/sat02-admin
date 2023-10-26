@@ -75,14 +75,14 @@ export default (S) =>
                                         .documentId("field-notes")
                                 ),
                             S.listItem()
-                                .title("About")
+                                .title("Theme")
                                 .icon(MdHome)
                                 .child(
                                     S.editor()
-                                        .id("about")
-                                        .title("About")
-                                        .schemaType("about")
-                                        .documentId("about")
+                                        .id("theme")
+                                        .title("Theme")
+                                        .schemaType("theme")
+                                        .documentId("theme")
                                 ),
                             S.listItem()
                                 .title("Venues")
