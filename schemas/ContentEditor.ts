@@ -9,6 +9,7 @@ export default {
         {
             title: 'Content editor',
             name: 'content',
+            description: 'To make a single line-break within a paragraph, press SHIFT + ENTER',
             type: 'array',
             of: [
                 {
