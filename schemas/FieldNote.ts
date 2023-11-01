@@ -34,6 +34,16 @@ export default {
             group: "ar",
         },
         {
+            name: 'author',
+            title: 'Author (English)',
+            type: 'string',
+        },
+        {
+            name: 'author_ar',
+            title: 'Author (Arabic)',
+            type: 'string',
+        },
+        {
             name: 'participants',
             title: 'Participants',
             type: 'array',
