@@ -34,6 +34,27 @@ export default {
             group: "ar",
         },
         {
+            name: 'featuredImage',
+            title: 'Featured image',
+            type: 'image',
+            description: 'Featured image of the project',
+            options: {
+                hotspot: true,
+            },
+            fields: [
+                {
+                    name: 'caption',
+                    type: 'string',
+                    title: 'Caption (english)',
+                },
+                {
+                    name: 'caption_ar',
+                    type: 'string',
+                    title: 'Caption (arabic)',
+                },
+            ]
+        },
+        {
             name: 'content',
             title: 'Content (english)',
             type: 'contentEditor',
