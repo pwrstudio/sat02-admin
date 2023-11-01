@@ -111,7 +111,6 @@ export default {
                 ],
             }],
             description: 'Images related to the venue',
-            validation: (Rule: any) => Rule.min(1).max(10)
         },
         {
             name: 'links',
@@ -125,7 +124,7 @@ export default {
                             name: 'title',
                             type: 'string',
                             title: 'Title (english)',
-                            validation: (Rule: any) => Rule.required().max(100)
+                            validation: (Rule: any) => Rule.required()
                         },
                         {
                             name: 'title_ar',
@@ -145,7 +144,6 @@ export default {
                     description: 'Links related to the venue'
                 }
             ],
-            validation: (Rule: any) => Rule.min(1).max(5)
         },
         {
             name: 'slug',

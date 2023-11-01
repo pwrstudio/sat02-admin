@@ -27,7 +27,7 @@ export default {
             title: 'Title (english)',
             type: 'string',
             description: 'Title of the event i english',
-            validation: (Rule: any) => Rule.required().max(100),
+            validation: (Rule: any) => Rule.required(),
             group: "en",
         },
         {

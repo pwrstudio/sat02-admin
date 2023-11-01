@@ -52,7 +52,6 @@ export default {
             title: 'Pull quote (english)',
             type: 'text',
             description: 'Short quote',
-            validation: (Rule: any) => Rule.max(400),
             group: "en",
         },
         {
@@ -106,8 +105,7 @@ export default {
                 ],
             }],
             description: 'Images related to the participant',
-
-            validation: (Rule: any) => Rule.min(1).max(10)
+            validation: (Rule: any) => Rule.min(1)
         },
         {
             name: 'links',
@@ -121,7 +119,7 @@ export default {
                             name: 'title',
                             type: 'string',
                             title: 'Title (english)',
-                            validation: (Rule: any) => Rule.required().max(100)
+                            validation: (Rule: any) => Rule.required()
                         },
                         {
                             name: 'title_ar',
@@ -141,7 +139,6 @@ export default {
                     description: 'Links related to the participant'
                 }
             ],
-            validation: (Rule: any) => Rule.min(1).max(5)
         },
         {
             name: 'slug',

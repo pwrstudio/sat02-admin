@@ -52,7 +52,6 @@ export default {
             title: 'Pull quote (english)',
             type: 'text',
             description: 'Short quote',
-            validation: (Rule: any) => Rule.max(400),
             group: "en",
         },
         {
@@ -60,7 +59,6 @@ export default {
             title: 'Pull quote (arabic)',
             type: 'text',
             description: 'Short quote in arabic',
-            validation: (Rule: any) => Rule.max(400),
             group: "ar",
         },
         {

@@ -23,7 +23,7 @@ export default {
             title: 'Title',
             type: 'string',
             description: 'Title of the field note in english',
-            validation: (Rule: any) => Rule.required().max(100),
+            validation: (Rule: any) => Rule.required(),
             group: "en",
         },
         {
@@ -64,7 +64,6 @@ export default {
             title: 'Pull quote (english)',
             type: 'text',
             description: 'Short quote in english',
-            validation: (Rule: any) => Rule.max(400),
             group: "en",
         },
         {
@@ -72,7 +71,6 @@ export default {
             title: 'Pull quote (arabic)',
             type: 'text',
             description: 'Short quote in arabic',
-            validation: (Rule: any) => Rule.max(400),
             group: "ar",
         },
         {
@@ -97,6 +95,76 @@ export default {
             ],
         },
         {
+            name: 'media',
+            title: 'Media',
+            type: 'array',
+            of: [
+                {
+                    type: 'image',
+                    title: 'Image',
+                    name: 'image',
+                    options: {
+                        hotspot: true,
+                    },
+                    fields: [
+                        {
+                            name: 'caption',
+                            type: 'string',
+                            title: 'Caption (english)',
+                        },
+                        {
+                            name: 'caption_ar',
+                            type: 'string',
+                            title: 'Caption (arabic)',
+                        },
+                    ],
+                },
+                {
+                    type: 'file',
+                    title: 'Video',
+                    name: 'video',
+                    fields: [
+                        {
+                            name: 'caption',
+                            type: 'string',
+                            title: 'Caption (english)',
+                        },
+                        {
+                            name: 'caption_ar',
+                            type: 'string',
+                            title: 'Caption (arabic)',
+                        },
+                    ],
+                    options: {
+                        accept: 'video/*'
+                    },
+                    validation: (Rule: any) => Rule.required()
+                },
+                {
+                    type: 'file',
+                    title: 'Audio',
+                    name: 'audio',
+                    fields: [
+                        {
+                            name: 'caption',
+                            type: 'string',
+                            title: 'Caption (english)',
+                        },
+                        {
+                            name: 'caption_ar',
+                            type: 'string',
+                            title: 'Caption (arabic)',
+                        },
+                    ],
+                    options: {
+                        accept: 'audio/*'
+                    },
+                    validation: (Rule: any) => Rule.required()
+                },
+            ],
+            description: 'Media related to the event'
+        },
+        {
             name: 'links',
             title: 'Links',
             type: 'array',
@@ -108,7 +176,7 @@ export default {
                             name: 'title',
                             type: 'string',
                             title: 'Title (english)',
-                            validation: (Rule: any) => Rule.required().max(100)
+                            validation: (Rule: any) => Rule.required()
                         },
                         {
                             name: 'title_ar',
@@ -152,12 +220,5 @@ export default {
             validation: (Rule: any) => Rule.required()
         }
 
-    ],
-    preview: {
-        select: {
-            title: 'title',
-            subtitle: 'content',
-            media: 'images[0]'
-        }
-    }
+    ]
 }
