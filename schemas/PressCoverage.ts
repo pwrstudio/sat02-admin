@@ -118,4 +118,13 @@ export default {
             validation: (Rule: any) => Rule.required()
         }
     ],
+    orderings: [
+        {
+            title: 'Release Date, New',
+            name: 'dateDesc',
+            by: [
+                { field: 'date', direction: 'desc' }
+            ]
+        },
+    ]
 }

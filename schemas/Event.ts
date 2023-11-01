@@ -123,8 +123,7 @@ export default {
                     type: 'string',
                     title: 'Caption (arabic)',
                 },
-            ],
-            validation: (Rule: any) => Rule.required()
+            ]
         },
         {
             name: 'media',
@@ -219,17 +218,17 @@ export default {
             validation: (Rule: any) => Rule.required()
         }
     ],
-    preview: {
-        select: {
-            title: 'title',
-            media: 'featuredImage'
-        },
-        prepare(selection: any) {
-            const { title, media } = selection;
-            return {
-                title,
-                media: media.asset
-            };
-        }
-    }
+    // preview: {
+    //     select: {
+    //         title: 'title',
+    //         media: 'featuredImage'
+    //     },
+    //     prepare(selection: any) {
+    //         const { title, media } = selection;
+    //         return {
+    //             title,
+    //             media: media.asset ? media.asset : ''
+    //         };
+    //     }
+    // }
 }
