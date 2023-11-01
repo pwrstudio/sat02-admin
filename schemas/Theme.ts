@@ -55,6 +55,35 @@ export default {
             ]
         },
         {
+            name: 'media',
+            title: 'Media',
+            type: 'array',
+            of: [
+                {
+                    type: 'image',
+                    title: 'Image',
+                    name: 'image',
+                    options: {
+                        hotspot: true,
+                    },
+                    fields: [
+                        {
+                            name: 'caption',
+                            type: 'string',
+                            title: 'Caption (english)',
+                        },
+                        {
+                            name: 'caption_ar',
+                            type: 'string',
+                            title: 'Caption (arabic)',
+                        },
+                    ],
+                },
+
+            ],
+            description: 'Related media'
+        },
+        {
             name: 'content',
             title: 'Content (english)',
             type: 'contentEditor',
