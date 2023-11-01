@@ -13,5 +13,6 @@ import Team from "./Team"
 import Contact from "./Contact"
 import DesignStore from "./DesignStore"
 import StoreItem from "./StoreItem"
+import LandingPage from "./LandingPage"
 
-export const schemaTypes = [Theme, Team, Contact, DesignStore, StoreItem, Page, Participant, Project, Event, Venue, FieldNote, Press, PressRelease, PressCoverage, ContentEditor]
+export const schemaTypes = [LandingPage, Theme, Team, Contact, DesignStore, StoreItem, Page, Participant, Project, Event, Venue, FieldNote, Press, PressRelease, PressCoverage, ContentEditor]

@@ -10,7 +10,8 @@ import {
     MdPeople,
     MdHome,
     MdShop,
-    MdCalendarMonth
+    MdCalendarMonth,
+    MdStar
 } from "react-icons/md"
 
 export default (S) =>
@@ -24,6 +25,16 @@ export default (S) =>
                     S.list()
                         .title("Pages")
                         .items([
+                            S.listItem()
+                                .title("Landing page")
+                                .icon(MdStar)
+                                .child(
+                                    S.editor()
+                                        .id("landing-page")
+                                        .title("Landing page")
+                                        .schemaType("landingPage")
+                                        .documentId("landing-page")
+                                ),
                             S.listItem()
                                 .title("Projects")
                                 .icon(MdFolder)
