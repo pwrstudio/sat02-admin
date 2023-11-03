@@ -15,7 +15,7 @@ export default {
             of: [
                 {
                     type: 'reference',
-                    to: [{ type: 'fieldNote' }, { type: 'project' }, { type: 'event' }, { type: 'participant' }]
+                    to: [{ type: 'project' }]
                 }
             ],
             description: 'Post shown at the top of the landing page'
