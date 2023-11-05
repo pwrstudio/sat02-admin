@@ -34,6 +34,11 @@ export default {
             group: "ar",
         },
         {
+            name: "displayOrder",
+            title: "Display Order",
+            type: "number",
+        },
+        {
             name: 'address',
             title: 'Address',
             type: 'text',
