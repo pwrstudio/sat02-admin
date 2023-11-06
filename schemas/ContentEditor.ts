@@ -1,4 +1,5 @@
 import { largeDecorator } from "./decorators/LargeDecorator"
+import { FaFilePdf } from 'react-icons/fa';
 
 export default {
     title: 'Content editor',
@@ -46,6 +47,23 @@ export default {
                                     {
                                         name: 'href',
                                         type: 'string'
+                                    }
+                                ]
+                            },
+                            // PDF file annotation
+                            {
+                                name: 'pdf',
+                                type: 'object',
+                                title: 'PDF',
+                                icon: FaFilePdf, // Add the icon here
+                                fields: [
+                                    {
+                                        title: 'PDF file',
+                                        name: 'file',
+                                        type: 'file',
+                                        options: {
+                                            accept: '.pdf'
+                                        }
                                     }
                                 ]
                             },
