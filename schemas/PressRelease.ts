@@ -89,6 +89,14 @@ export default {
             },
         },
         {
+            name: 'pdf_ar',
+            title: 'PDF (arabic)',
+            type: 'file',
+            options: {
+                accept: '.pdf'
+            },
+        },
+        {
             name: 'content',
             title: 'Content (english)',
             type: 'contentEditor',

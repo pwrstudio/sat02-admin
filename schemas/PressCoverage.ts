@@ -89,6 +89,14 @@ export default {
             },
         },
         {
+            name: 'pdf',
+            title: 'PDF ',
+            type: 'file',
+            options: {
+                accept: '.pdf'
+            },
+        },
+        {
             name: 'publication',
             title: 'Publication',
             type: 'string',
