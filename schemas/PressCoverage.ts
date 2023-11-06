@@ -89,8 +89,8 @@ export default {
             },
         },
         {
-            name: 'pdf',
-            title: 'PDF ',
+            name: 'pdf_ar',
+            title: 'PDF (arabic)',
             type: 'file',
             options: {
                 accept: '.pdf'
