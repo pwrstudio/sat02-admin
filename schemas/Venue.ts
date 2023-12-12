@@ -39,6 +39,12 @@ export default {
             type: "number",
         },
         {
+            name: 'openingHours',
+            title: 'Opening hours',
+            type: 'text',
+            description: 'To make a single line-break within a paragraph, press SHIFT + ENTER',
+        },
+        {
             name: 'address',
             title: 'Address',
             type: 'text',
