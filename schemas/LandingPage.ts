@@ -18,7 +18,7 @@ export default {
                     to: [{ type: 'project' }]
                 }
             ],
-            description: 'Post shown at the top of the landing page'
+            description: 'Post shown at the top of the landing page. Leave empty to show a random post.'
         },
         {
             name: 'timestamp',
