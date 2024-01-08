@@ -45,6 +45,20 @@ export default {
                                 title: 'Link',
                                 fields: [
                                     {
+                                        name: 'platform',
+                                        type: 'string',
+                                        title: 'Platform',
+                                        options: {
+                                            list: [
+                                                { title: 'None', value: 'none' },
+                                                { title: 'Twitter', value: 'twitter' },
+                                                { title: 'Instagram', value: 'instagram' },
+                                                { title: 'Facebook', value: 'facebook' }
+                                            ],
+                                            initialValue: 'none',
+                                        }
+                                    },
+                                    {
                                         name: 'href',
                                         type: 'string'
                                     }
@@ -55,7 +69,7 @@ export default {
                                 name: 'pdf',
                                 type: 'object',
                                 title: 'PDF',
-                                icon: FaFilePdf, // Add the icon here
+                                icon: FaFilePdf,
                                 fields: [
                                     {
                                         title: 'PDF file',

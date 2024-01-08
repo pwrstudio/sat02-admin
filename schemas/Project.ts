@@ -34,6 +34,19 @@ export default {
             group: "ar",
         },
         {
+            title: "Exhibition strand",
+            name: "exhibitionStrand",
+            type: "string",
+            options: {
+                list: [
+                    { title: "Renewed Contextual", value: "renewed-contextual" },
+                    { title: "Extraction Politics", value: "extraction-politics" },
+                    { title: "Intangible Bodies", value: "intangible-bodies" },
+                ],
+                layout: "radio",
+            },
+        },
+        {
             name: 'description',
             title: 'Description (english)',
             type: 'contentEditor',
