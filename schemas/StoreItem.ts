@@ -55,6 +55,31 @@ export default {
             ],
         },
         {
+            name: 'images',
+            title: 'Images',
+            type: 'array',
+            of: [{
+                type: 'image',
+                options: {
+                    hotspot: true,
+                },
+                fields: [
+                    {
+                        name: 'caption',
+                        type: 'string',
+                        title: 'Caption (english)',
+                    },
+                    {
+                        name: 'caption_ar',
+                        type: 'string',
+                        title: 'Caption (arabic)',
+                    },
+                ],
+            }],
+            description: 'Images related to the participant',
+            validation: (Rule: any) => Rule.min(1)
+        },
+        {
             name: 'link',
             title: 'Link',
             type: 'url'
