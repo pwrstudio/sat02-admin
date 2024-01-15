@@ -88,7 +88,7 @@ export default {
                             type: 'url',
                             title: 'Url',
                             name: 'url',
-                            desciption: 'Youtube or Vimeo url, eg. https://vimeo.com/235224162',
+                            description: 'Youtube or Vimeo url, eg. https://vimeo.com/235224162',
                         },
                         {
                             name: 'caption',
