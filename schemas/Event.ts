@@ -151,10 +151,16 @@ export default {
                     ],
                 },
                 {
-                    type: 'file',
                     title: 'Video',
                     name: 'video',
+                    type: 'object',
                     fields: [
+                        {
+                            type: 'url',
+                            title: 'Url',
+                            name: 'url',
+                            desciption: 'Youtube or Vimeo url, eg. https://vimeo.com/235224162',
+                        },
                         {
                             name: 'caption',
                             type: 'string',
@@ -165,33 +171,8 @@ export default {
                             type: 'string',
                             title: 'Caption (arabic)',
                         },
-                    ],
-                    options: {
-                        accept: 'video/*'
-                    },
-                    validation: (Rule: any) => Rule.required()
-                },
-                {
-                    type: 'file',
-                    title: 'Audio',
-                    name: 'audio',
-                    fields: [
-                        {
-                            name: 'caption',
-                            type: 'string',
-                            title: 'Caption (english)',
-                        },
-                        {
-                            name: 'caption_ar',
-                            type: 'string',
-                            title: 'Caption (arabic)',
-                        },
-                    ],
-                    options: {
-                        accept: 'audio/*'
-                    },
-                    validation: (Rule: any) => Rule.required()
-                },
+                    ]
+                }
             ],
             description: 'Media related to the event'
         },

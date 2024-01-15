@@ -58,24 +58,48 @@ export default {
             name: 'images',
             title: 'Images',
             type: 'array',
-            of: [{
-                type: 'image',
-                options: {
-                    hotspot: true,
+            of: [
+                {
+                    type: 'image',
+                    options: {
+                        hotspot: true,
+                    },
+                    fields: [
+                        {
+                            name: 'caption',
+                            type: 'string',
+                            title: 'Caption (english)',
+                        },
+                        {
+                            name: 'caption_ar',
+                            type: 'string',
+                            title: 'Caption (arabic)',
+                        },
+                    ],
                 },
-                fields: [
-                    {
-                        name: 'caption',
-                        type: 'string',
-                        title: 'Caption (english)',
-                    },
-                    {
-                        name: 'caption_ar',
-                        type: 'string',
-                        title: 'Caption (arabic)',
-                    },
-                ],
-            }],
+                {
+                    title: 'Video',
+                    name: 'video',
+                    type: 'object',
+                    fields: [
+                        {
+                            type: 'url',
+                            title: 'Url',
+                            name: 'url',
+                            desciption: 'Youtube or Vimeo url, eg. https://vimeo.com/235224162',
+                        },
+                        {
+                            name: 'caption',
+                            type: 'string',
+                            title: 'Caption (english)',
+                        },
+                        {
+                            name: 'caption_ar',
+                            type: 'string',
+                            title: 'Caption (arabic)',
+                        },
+                    ]
+                }],
             description: 'Images related to the participant',
             validation: (Rule: any) => Rule.min(1)
         },
