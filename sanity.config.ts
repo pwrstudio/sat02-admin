@@ -1,6 +1,5 @@
 import { defineConfig } from 'sanity'
-import { deskTool } from 'sanity/desk'
-import { visionTool } from '@sanity/vision'
+import { structureTool } from 'sanity/structure'
 import { schemaTypes } from './schemas'
 import deskStructure from './deskStructure'
 
@@ -11,9 +10,29 @@ export default defineConfig({
   projectId: 'q6keo3xr',
   dataset: 'production',
 
-  plugins: [deskTool({
-    structure: deskStructure
-  }), visionTool()],
+  plugins: [
+    structureTool({ structure: deskStructure })
+  ],
+
+  document: {
+    newDocumentOptions: (prev, { creationContext }) => {
+      const { type } = creationContext;
+      const DISABLED_TYPES = [
+        'page',
+        'press',
+        'team',
+        'landingPage',
+        'contact',
+        'designStore',
+        'team',
+        'theme'
+      ];
+      if (type === 'global') {
+        return prev.filter((template) => !DISABLED_TYPES.includes(template.templateId));
+      }
+      return prev;
+    },
+  },
 
   schema: {
     types: schemaTypes,

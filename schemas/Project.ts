@@ -99,6 +99,11 @@ export default {
             description: 'Project venues'
         },
         {
+            name: 'matterportLink',
+            title: 'Matterport Link',
+            type: 'url',
+        },
+        {
             name: 'year',
             title: 'Year',
             type: 'string',

@@ -60,6 +60,11 @@ export default {
             group: "ar",
         },
         {
+            name: 'matterportLink',
+            title: 'Matterport Link',
+            type: 'url',
+        },
+        {
             name: 'location',
             title: 'Location',
             type: 'geopoint',
