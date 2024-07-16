@@ -34,6 +34,11 @@ export default {
             group: "ar",
         },
         {
+            name: 'matterportLink',
+            title: 'Matterport Link',
+            type: 'url',
+        },
+        {
             name: 'featuredImage',
             title: 'Featured image',
             type: 'image',
